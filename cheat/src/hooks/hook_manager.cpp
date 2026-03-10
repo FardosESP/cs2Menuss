@@ -21,29 +21,37 @@ LRESULT CALLBACK hkWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 bool HookManager::Initialize() {
     std::cout << "[*] Initializing Hook Manager..." << std::endl;
     
-    // Initialize MinHook
-    if (MH_Initialize() != MH_OK) {
-        std::cerr << "[!] Failed to initialize MinHook" << std::endl;
+    __try {
+        // Initialize MinHook
+        if (MH_Initialize() != MH_OK) {
+            std::cerr << "[!] Failed to initialize MinHook" << std::endl;
+            return false;
+        }
+        
+        std::cout << "[+] MinHook initialized successfully" << std::endl;
+        
+        // Hook Present and WndProc
+        if (!HookPresent()) {
+            std::cerr << "[!] Failed to hook Present" << std::endl;
+            MH_Uninitialize();
+            return false;
+        }
+        
+        if (!HookWndProc()) {
+            std::cerr << "[!] Failed to hook WndProc" << std::endl;
+            MH_Uninitialize();
+            return false;
+        }
+        
+        hooksInstalled = true;
+        std::cout << "[+] All hooks installed successfully" << std::endl;
+        
+        return true;
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER) {
+        std::cerr << "[!] Exception during hook initialization: 0x" << std::hex << GetExceptionCode() << std::endl;
         return false;
     }
-    
-    std::cout << "[+] MinHook initialized successfully" << std::endl;
-    
-    // Hook Present and WndProc
-    if (!HookPresent()) {
-        std::cerr << "[!] Failed to hook Present" << std::endl;
-        return false;
-    }
-    
-    if (!HookWndProc()) {
-        std::cerr << "[!] Failed to hook WndProc" << std::endl;
-        return false;
-    }
-    
-    hooksInstalled = true;
-    std::cout << "[+] All hooks installed successfully" << std::endl;
-    
-    return true;
 }
 
 bool HookManager::HookPresent() {

@@ -78,6 +78,8 @@ void InitializeCheat() {
         // Step 5: Initialize Menu Manager
         std::cout << "[*] Initializing Menu Manager..." << std::endl;
         g_MenuManager = new MenuManager();
+        std::cout << "[+] Menu Manager created" << std::endl;
+        
         g_MenuManager->ApplyNeverloseStyle();
         std::cout << "[+] Menu Manager initialized" << std::endl;
         
@@ -87,13 +89,21 @@ void InitializeCheat() {
         std::cout << "[+] Config Manager initialized" << std::endl;
         std::cout << "[*] Config path: " << g_ConfigManager->GetConfigPath() << std::endl;
         
-        // Step 7: Install hooks
+        // Step 7: Install hooks (with delay to let game stabilize)
+        std::cout << "[*] Waiting for game to stabilize..." << std::endl;
+        std::this_thread::sleep_for(std::chrono::seconds(3));
+        
         std::cout << "[*] Installing hooks..." << std::endl;
         g_HookManager = new HookManager();
+        std::cout << "[+] HookManager created" << std::endl;
+        
         if (!g_HookManager->Initialize()) {
-            throw std::runtime_error("Failed to initialize Hook Manager");
+            std::cout << "[!] Failed to initialize hooks" << std::endl;
+            std::cout << "[!] Menu and ESP will not be available" << std::endl;
+            // Don't throw - continue without hooks
+        } else {
+            std::cout << "[+] Hooks installed successfully" << std::endl;
         }
-        std::cout << "[+] Hooks installed successfully" << std::endl;
         
         // Step 8: Load default configuration
         std::cout << "[*] Loading default configuration..." << std::endl;
