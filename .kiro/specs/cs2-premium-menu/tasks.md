@@ -60,13 +60,13 @@ Este plan implementa un cheat premium para CS2 estilo Neverlose, comenzando con 
     - Test de resolución de imports
     - _Requisitos: 2.1-2.6_
 
-- [x] 4. Implementar VAC Bypass (Launcher)
-  - [x] 4.1 Crear clase VACBypass con técnicas de evasión
+- [ ] 4. Implementar VAC Bypass (Launcher)
+  - [ ] 4.1 Crear clase VACBypass con técnicas de evasión
     - Implementar detección de módulos VAC
     - Implementar parcheo de funciones de verificación
     - Implementar ocultación de threads
     - Implementar protección de memoria (PAGE_EXECUTE_READ)
-    - **NOTA:** Solo educativo, no usar en online
+    - **NOTA:** Por implementar
     - _Requisitos: 3.1, 3.2, 3.3, 3.4, 3.5_
   
   - [ ]* 4.2 Escribir tests de VAC bypass
@@ -555,3 +555,4 @@ Cada fase futura seguirá el mismo patrón:
 - El desarrollador NO se hace responsable del mal uso
 
 **Buena suerte con la implementación!** 🚀
+
