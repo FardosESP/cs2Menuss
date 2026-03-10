@@ -1,0 +1,88 @@
+# Build directories
+build/
+bin/
+lib/
+out/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.sln.docstates
+*.vcxproj.user
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+
+# Compiled files
+*.exe
+*.dll
+*.lib
+*.obj
+*.o
+*.pdb
+*.ilk
+*.exp
+
+# Logs and debug files
+*.log
+*.txt
+!CMakeLists.txt
+!README.txt
+!LICENSE.txt
+
+# Config files (user-specific)
+*.ini
+*.cfg
+configs/
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# External dependencies (if not using submodules)
+# external/imgui/
+# external/minhook/
+# external/json/
+
+# Kiro specific
+.kiro/cache/
+.kiro/logs/
+
+# Sensitive information
+*.key
+*.pem
+secrets/
+credentials/
+
+# Test outputs
+test_results/
+coverage/
+
+# Documentation build
+docs/_build/
+docs/.doctrees/
+
+# Package managers
+vcpkg_installed/
+packages/
+node_modules/
