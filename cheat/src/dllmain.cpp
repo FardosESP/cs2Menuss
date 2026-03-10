@@ -1,5 +1,4 @@
 // CS2 Premium Menu - Cheat DLL
-// Educational purposes only - DO NOT use online
 
 #include <Windows.h>
 #include <thread>
@@ -47,8 +46,7 @@ void InitializeCheat() {
     ██║     ██║  ██║██║  ██║██████╔╝╚██████╔╝███████║██╗╚██████╗╚██████╗
     ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝ ╚══════╝╚═╝ ╚═════╝ ╚═════╝
     
-    CS2 Premium Menu v1.0 - Educational Purposes Only
-    ⚠️  DO NOT USE IN ONLINE MATCHES - VAC BAN GUARANTEED ⚠️
+    CS2 Premium Menu v1.0
     )" << std::endl;
     
     std::cout << "\n[*] Starting initialization sequence..." << std::endl;
@@ -109,8 +107,6 @@ void InitializeCheat() {
         std::cout << "\n[+] ===== INITIALIZATION COMPLETE =====" << std::endl;
         std::cout << "[+] Press INSERT to open menu" << std::endl;
         std::cout << "[+] Press END to unload cheat" << std::endl;
-        std::cout << "\n⚠️  REMINDER: Educational purposes only!" << std::endl;
-        std::cout << "⚠️  Using this online WILL result in VAC ban!" << std::endl;
         
     } catch (const std::exception& e) {
         std::cerr << "\n[!] INITIALIZATION FAILED: " << e.what() << std::endl;

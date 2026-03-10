@@ -504,8 +504,6 @@ void MenuManager::RenderConfigTab() {
     ImGui::Text("About");
     ImGui::Text("Fardos.cc - Premium CS2 Cheat");
     ImGui::Text("Version 1.0.0");
-    ImGui::TextColored(ImVec4(1.0f, 1.0f, 0.0f, 1.0f), "Educational purposes only");
-    ImGui::TextColored(ImVec4(1.0f, 0.0f, 0.0f, 1.0f), "DO NOT use in online matches!");
 }
 
 

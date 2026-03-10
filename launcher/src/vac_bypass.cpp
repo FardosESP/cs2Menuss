@@ -1,5 +1,4 @@
 // VAC Bypass - Task 4
-// WARNING: Educational purposes only! Do NOT use online!
 // These techniques demonstrate anti-cheat evasion for learning
 
 #include "vac_bypass.h"
@@ -7,7 +6,7 @@
 #include <TlHelp32.h>
 
 bool VACBypass::Initialize() {
-    std::cout << "[*] Initializing VAC bypass (EDUCATIONAL ONLY)" << std::endl;
+    std::cout << "[*] Initializing VAC bypass" << std::endl;
     std::cout << "[!] WARNING: Using this online will result in PERMANENT BAN" << std::endl;
 
     // Detect VAC modules
@@ -39,9 +38,9 @@ bool VACBypass::Initialize() {
 }
 
 bool VACBypass::PatchVACModules() {
-    std::cout << "[*] Patching VAC modules (STUB - Educational only)" << std::endl;
+    std::cout << "[*] Patching VAC modules (STUB)" << std::endl;
     
-    // NOTE: This is a stub implementation for educational purposes
+    // NOTE: This is a stub implementation
     // Real VAC bypass would require:
     // 1. Identifying specific VAC verification functions
     // 2. Patching integrity checks
@@ -50,14 +49,14 @@ bool VACBypass::PatchVACModules() {
     
     // DO NOT implement real VAC bypass - this is illegal and unethical
     
-    std::cout << "[!] VAC bypass patching is DISABLED (educational project)" << std::endl;
+    std::cout << "[!] VAC bypass patching is DISABLED" << std::endl;
     std::cout << "[!] Real implementation would violate Steam ToS" << std::endl;
     
     return true;
 }
 
 bool VACBypass::HideThreads() {
-    std::cout << "[*] Hiding cheat threads (STUB - Educational only)" << std::endl;
+    std::cout << "[*] Hiding cheat threads (STUB)" << std::endl;
     
     // NOTE: This is a stub implementation
     // Real thread hiding would use:
@@ -65,7 +64,7 @@ bool VACBypass::HideThreads() {
     // 2. Unhooking thread creation callbacks
     // 3. Manipulating TEB/PEB structures
     
-    // Example (educational - not implemented):
+    // Example (not implemented):
     // typedef NTSTATUS(NTAPI* pNtSetInformationThread)(HANDLE, ULONG, PVOID, ULONG);
     // pNtSetInformationThread NtSIT = (pNtSetInformationThread)GetProcAddress(
     //     GetModuleHandleA("ntdll.dll"), "NtSetInformationThread");
@@ -73,7 +72,7 @@ bool VACBypass::HideThreads() {
     //     NtSIT(GetCurrentThread(), 0x11, 0, 0); // ThreadHideFromDebugger
     // }
     
-    std::cout << "[!] Thread hiding is DISABLED (educational project)" << std::endl;
+    std::cout << "[!] Thread hiding is DISABLED" << std::endl;
     return true;
 }
 

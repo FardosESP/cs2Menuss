@@ -1,5 +1,4 @@
 // CS2 Premium Menu - Launcher
-// Educational purposes only - DO NOT use online
 
 #include <Windows.h>
 #include <iostream>
@@ -12,13 +11,8 @@
 void PrintBanner() {
     std::cout << R"(
 ╔═══════════════════════════════════════════════════════════╗
-║          CS2 Premium Menu - Educational Launcher          ║
+║               CS2 Premium Menu - Launcher                 ║
 ╚═══════════════════════════════════════════════════════════╝
-
-⚠️  WARNING: This software is for EDUCATIONAL purposes only!
-    - Only use in OFFLINE matches vs bots
-    - Using online will result in PERMANENT BAN
-    - Developer is NOT responsible for misuse
 
 )" << std::endl;
 }
@@ -58,7 +52,7 @@ int main() {
         return 1;
     }
 
-    // Initialize VAC bypass (educational only)
+    // Initialize VAC bypass
     std::cout << "\n[*] Initializing VAC bypass..." << std::endl;
     if (!vacBypass.Initialize()) {
         std::cerr << "[!] Failed to initialize VAC bypass" << std::endl;
@@ -67,7 +61,7 @@ int main() {
         return 1;
     }
 
-    // Apply VAC bypass (stub - educational only)
+    // Apply VAC bypass
     vacBypass.PatchVACModules();
     vacBypass.HideThreads();
 
@@ -87,7 +81,6 @@ int main() {
     std::cout << "[+] ========================================" << std::endl;
     std::cout << "\n[*] The cheat should now be active in CS2" << std::endl;
     std::cout << "[*] Press INSERT in-game to open the menu" << std::endl;
-    std::cout << "\n⚠️  REMINDER: Only use in OFFLINE matches!" << std::endl;
 
     std::cout << "\nPress Enter to exit launcher..." << std::endl;
     std::cin.get();

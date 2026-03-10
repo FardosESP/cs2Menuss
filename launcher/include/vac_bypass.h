@@ -5,7 +5,6 @@
 #include <cstdint>
 
 // VAC Bypass - Task 4
-// WARNING: Educational purposes only! Do NOT use online!
 
 class VACBypass {
 public:

@@ -1,214 +1,178 @@
 # Fardos.cc - CS2 Premium Menu
 
-## ⚠️ ADVERTENCIA LEGAL
+Premium menu for CS2 inspired by Neverlose, built with modular architecture. This project demonstrates advanced game hacking techniques including memory manipulation, pattern scanning, DirectX hooking, and overlay rendering.
 
-**ADVERTENCIA CRÍTICA**: Este software está diseñado EXCLUSIVAMENTE para propósitos educativos en entornos controlados (partidas offline vs bots).
+## Features
 
-- ❌ NO permitido para uso en partidas online
-- ❌ NO permitido en servidores VAC-secured
-- ❌ El uso online resultará en ban permanente
-- ✅ Solo para aprendizaje de ingeniería inversa
-- ✅ Solo para uso en partidas locales vs bots
+### Core Infrastructure
+- Process detection and management
+- DLL injection with manual mapping
+- Memory engine with safe read/write operations
+- Signature scanner with caching
+- Dynamic offset management
 
-**El desarrollador NO se hace responsable del mal uso de este software.**
-
-## Descripción General
-
-Menú premium para CS2 inspirado en Neverlose, construido con arquitectura modular para propósitos educativos. Este proyecto demuestra técnicas avanzadas de game hacking incluyendo:
-
-- Manipulación de memoria y pattern scanning
-- Hooking de DirectX y renderizado de overlay
-- Sistema de entidades y ESP (Extra Sensory Perception)
-- UI premium basada en ImGui
-- Arquitectura completa de features HvH (Head vs Head)
-
-## Estructura del Proyecto
-
-```
-cs2-premium-menu/
-├── launcher/          # Aplicación inyectora externa
-├── cheat/            # DLL principal del cheat
-├── external/         # Dependencias de terceros
-└── .kiro/specs/      # Documentación de diseño
-```
-
-## Features Implementadas
-
-### ✅ Fase 1: Core Infrastructure (COMPLETO)
-- Detección y gestión de procesos
-- Inyección DLL con manual mapping
-- Técnicas de VAC bypass (solo educativo)
-- Motor de memoria con lectura/escritura segura
-- Scanner de signatures con caché
-- Gestión dinámica de offsets
-
-### ✅ Fase 2: ESP System (COMPLETO)
-- Detección y tracking de entidades
-- Transformación WorldToScreen
+### ESP System
+- Entity detection and tracking
+- WorldToScreen transformation
 - Box ESP (2D)
-- Información de jugadores (nombre, salud, distancia)
+- Player information (name, health, distance)
 - Skeleton ESP
 - Snaplines
-- Filtrado por equipo
+- Team filtering
 
-### ✅ Fase 3: UI System (COMPLETO)
-- Integración de ImGui con hooks de DirectX
-- Estilo inspirado en Neverlose
-- Sistema de configuración con JSON
-- Menú multi-tab (Legit, Rage, Anti-Aim, Visuals, Misc, Skins, Config)
+### UI System
+- ImGui integration with DirectX hooks
+- Neverlose-inspired styling
+- JSON configuration system
+- Multi-tab menu (Legit, Rage, Anti-Aim, Visuals, Misc, Skins, Config)
 
-### ✅ Fase 4: Config System (COMPLETO)
-- Guardado/carga de configuraciones en JSON
-- Gestión de múltiples configs
-- Versionado de configs
-- Serialización de todas las opciones
+### Config System
+- Save/load configurations in JSON
+- Multiple config management
+- Config versioning
+- Serialization of all options
 
-### 🔜 Fases Futuras (Documentadas)
-- Rage Aimbot con multipoint
+### Future Features (Documented)
+- Rage Aimbot with multipoint
 - Anti-Aim (pitch, yaw, desync, fakelag)
-- Resolver para romper anti-aim enemigo
+- Resolver for breaking enemy anti-aim
 - Backtrack
 - Exploits (double tap, hide shots)
 - Auto duck, auto peek
-- Y 60+ features HvH más
+- 60+ additional HvH features
 
-## Requisitos
+## Project Structure
+
+```
+cs2-premium-menu/
+├── launcher/          # External injector application
+├── cheat/            # Main cheat DLL
+├── external/         # Third-party dependencies
+└── .kiro/specs/      # Design documentation
+```
+
+## Requirements
 
 - Windows 10/11 (x64)
-- Visual Studio 2022 con soporte C++20
+- Visual Studio 2022 with C++20 support
 - CMake 3.20+
-- Counter-Strike 2 (para testing en modo offline solamente)
+- Counter-Strike 2
 
-## Dependencias
+## Dependencies
 
-- **ImGui** v1.89+ (MIT License) - Renderizado de UI
+- **ImGui** v1.89+ (MIT License) - UI rendering
 - **MinHook** v1.3.3+ (BSD 2-Clause) - Function hooking
-- **nlohmann/json** v3.11+ (MIT License) - Serialización de configuración
+- **nlohmann/json** v3.11+ (MIT License) - Configuration serialization
 
-## Compilación
+## Building
 
-1. Clonar el repositorio con submodules:
+1. Clone the repository with submodules:
 ```bash
-git clone --recursive https://github.com/yourusername/cs2-premium-menu.git
-cd cs2-premium-menu
+git clone --recursive https://github.com/FardosESP/cs2Menuss.git
+cd cs2Menuss
 ```
 
-2. Inicializar dependencias externas:
+2. Initialize external dependencies:
 ```bash
-# Descargar ImGui, MinHook, y nlohmann/json al directorio external/
-# Ver external/README.md para instrucciones
+# Download ImGui, MinHook, and nlohmann/json to external/
+# See external/README.md for instructions
 ```
 
-3. Generar archivos de build:
+3. Generate build files:
 ```bash
 mkdir build
 cd build
 cmake ..
 ```
 
-4. Compilar el proyecto:
+4. Compile the project:
 ```bash
 cmake --build . --config Release
 ```
 
-5. Los archivos de salida estarán en `build/bin/`:
-   - `CS2Launcher.exe` - Inyector
-   - `cheat.dll` - Librería principal del cheat
+5. Output files will be in `build/bin/`:
+   - `CS2Launcher.exe` - Injector
+   - `cheat.dll` - Main cheat library
 
-## Uso (Solo Educativo)
+## Usage
 
-1. Iniciar CS2 en modo offline con bots
-2. Ejecutar `CS2Launcher.exe` como Administrador
-3. El launcher detectará CS2 e inyectará el cheat
-4. Presionar `INSERT` para abrir el menú en el juego
-5. Configurar opciones de ESP en el menú
-6. Presionar `INSERT` nuevamente para cerrar el menú
-7. Presionar `END` para descargar el cheat
+1. Launch CS2
+2. Run `CS2Launcher.exe` as Administrator
+3. The launcher will detect CS2 and inject the cheat
+4. Press `INSERT` to open the menu in-game
+5. Configure ESP options in the menu
+6. Press `INSERT` again to close the menu
+7. Press `END` to unload the cheat
 
-## Controles
+## Controls
 
-- **INSERT** - Abrir/cerrar menú
-- **END** - Descargar cheat
+- **INSERT** - Open/close menu
+- **END** - Unload cheat
 
-## Configuraciones
+## Configuration
 
-Las configuraciones se guardan en:
+Configurations are saved in:
 ```
 %APPDATA%/Fardos.cc/configs/
 ```
 
-Puedes guardar múltiples configuraciones y cargarlas desde el tab Config del menú.
+You can save multiple configurations and load them from the Config tab in the menu.
 
-## Documentación
+## Documentation
 
-Documentación técnica completa disponible en `.kiro/specs/cs2-premium-menu/`:
-- `design.md` - Arquitectura técnica y algoritmos
-- `requirements.md` - 80 requisitos funcionales
-- `tasks.md` - Plan de implementación
+Complete technical documentation available in `.kiro/specs/cs2-premium-menu/`:
+- `design.md` - Technical architecture and algorithms
+- `requirements.md` - 80 functional requirements
+- `tasks.md` - Implementation plan
 
-## Desarrollo
+## Development
 
-### Estilo de Código
-- Estándar C++20
-- Prácticas modernas de C++ (RAII, smart pointers, etc.)
-- Convenciones de nombres claras
-- Comentarios comprensivos para algoritmos complejos
+### Code Style
+- C++20 standard
+- Modern C++ practices (RAII, smart pointers, etc.)
+- Clear naming conventions
+- Comprehensive comments for complex algorithms
 
 ### Testing
-- Unit tests para componentes críticos
-- Property-based tests para algoritmos
-- Testing manual en entorno offline
+- Unit tests for critical components
+- Property-based tests for algorithms
+- Manual testing in offline environment
 
-### Objetivos de Performance
-- Impacto en FPS: <5% de reducción
-- Uso de memoria: <50MB adicional
-- Uso de CPU: <5% de un core
-- Tiempo de inicio: <2 segundos desde inyección
+### Performance Goals
+- FPS impact: <5% reduction
+- Memory usage: <50MB additional
+- CPU usage: <5% of one core
+- Startup time: <2 seconds from injection
 
-## Consideraciones de Seguridad
+## Security Considerations
 
-Este proyecto demuestra técnicas de evasión de anti-cheat para propósitos educativos:
-- Manual mapping para evitar detección de LoadLibrary
-- Ofuscación de strings
-- Ocultación de imports
-- Ocultación de threads
-- Protección de memoria
+This project demonstrates anti-cheat evasion techniques:
+- Manual mapping to avoid LoadLibrary detection
+- String obfuscation
+- Import hiding
+- Thread hiding
+- Memory protection
 
-**Estas técnicas son solo para aprendizaje. Usarlas en juegos online es poco ético e ilegal.**
+## Contributing
 
-## Contribuciones
+Contributions focused on:
+- Code quality improvements
+- Documentation enhancements
+- Bug fixes
+- Educational content
 
-Este es un proyecto educativo. Las contribuciones deben enfocarse en:
-- Mejoras de calidad de código
-- Mejoras de documentación
-- Corrección de bugs
-- Contenido educativo
+## License
 
-**No contribuir features diseñadas para cheating online.**
+This project is licensed under the MIT License. See LICENSE file for details.
 
-## Licencia
+## Acknowledgments
 
-Este proyecto es solo para propósitos educativos. Ver archivo LICENSE para detalles.
-
-## Agradecimientos
-
-- Valve Corporation por Counter-Strike 2
-- ImGui por Omar Cornut
-- MinHook por Tsuda Kageyu
-- nlohmann/json por Niels Lohmann
-- La comunidad de game hacking por recursos educativos
-
-## Disclaimer (De Nuevo)
-
-**ESTE SOFTWARE ES SOLO PARA PROPÓSITOS EDUCATIVOS.**
-
-Usar este software en partidas online viola:
-- Steam Subscriber Agreement
-- Counter-Strike 2 Terms of Service
-- Potencialmente leyes locales sobre fraude informático
-
-**Has sido advertido. Usa responsable y éticamente.**
+- Valve Corporation for Counter-Strike 2
+- ImGui by Omar Cornut
+- MinHook by Tsuda Kageyu
+- nlohmann/json by Niels Lohmann
+- The game hacking community for educational resources
 
 ---
 
-*Construido con ❤️ para aprender, no para hacer trampa.*
+*Built with ❤️ for learning*
